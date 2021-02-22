@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace GradeBook
 {
-    class Book
+    public class Book
     {
         //field definition
         List<double> grades;
-        string name; 
+        string name;
+
         public Book(string name)
         {
         grades = new List<double>();
@@ -29,22 +30,33 @@ namespace GradeBook
             return name;
         }
         
-        public void ShowStats()
+        public Statistics GetStats()
         {
-            var res = 0.0;
-            var highest = double.MinValue;
-            var lowest = double.MaxValue;
-            foreach (var num in grades)
+            var res = new Statistics();
+            res.Highest = double.MinValue;
+            res.Lowest = double.MaxValue;
+            var sum = 0.0;
+
+            foreach (var grade in grades)
             {
-                res += num;
-                highest = Math.Max(highest, num);
-                lowest = Math.Min(lowest, num);
+                sum += grade;
+                res.Highest = Math.Max(res.Highest, grade);
+                res.Lowest = Math.Min(res.Lowest, grade);
 
             }
-            Console.WriteLine($"The average grade is {(res / grades.Count):N1}");
-            Console.WriteLine($"The highest grade is {highest}");
-            Console.WriteLine($"The lowest grade is {lowest}");
+            res.Average = (sum / grades.Count);
+
+            return res;
+        
         }
+
+        //public void ShowStats()
+        //{
+
+        //    Console.WriteLine($"The average grade is {average:N1}");
+        //    Console.WriteLine($"The highest grade is {highest}");
+        //    Console.WriteLine($"The lowest grade is {lowest}");
+        //}
 
     }
 }
