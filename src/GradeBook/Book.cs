@@ -10,13 +10,14 @@ namespace GradeBook
     {
         //field definition
         List<double> grades;
-        string name;
+        public string Name;
 
         public Book(string name)
         {
         grades = new List<double>();
-        this.name = name;
+        this.Name = name;
         }
+      
         public void AddGrade(double grade)
         {
             if(grade>0 && grade <100) grades.Add(grade);
@@ -27,7 +28,7 @@ namespace GradeBook
         }
         public string GetName()
         {
-            return name;
+            return Name;
         }
         
         public Statistics GetStats()

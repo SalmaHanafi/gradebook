@@ -1,4 +1,4 @@
- using System;
+using System;
 using Xunit;
 using GradeBook;
 
@@ -7,7 +7,7 @@ namespace GradeBook.Tests
     public class BookTests
     {
         [Fact]
-        public void Test1()
+        public void BookCalculatesCorrectGradesTest()
         {
             
             //arrange
