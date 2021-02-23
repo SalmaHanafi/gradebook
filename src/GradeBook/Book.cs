@@ -10,7 +10,8 @@ namespace GradeBook
     {
         //field definition
         List<double> grades;
-        public string Name;
+        //public string Name;
+        public string Name { get; set; }
 
         public Book(string name)
         {
@@ -26,6 +27,26 @@ namespace GradeBook
                 throw new ArgumentException($"Invalid {nameof(grade)}!");
 
             }
+        }
+        public void AddGrade(char letter)
+        {
+            switch (letter)
+            {
+                case 'A':
+                    AddGrade(90.0);
+                    break;
+                case 'B':
+                    AddGrade(80.0);
+                    break;
+                case 'C':
+                    AddGrade(70.0);
+                    break;
+                default:
+                    AddGrade(0.0);
+                    break;
+
+            }
+
         }
         public List<double> GetGrades()
         {
@@ -45,10 +66,10 @@ namespace GradeBook
 
             for(var i =0; i<grades.Count; i++)
             {
-                if(grades[i] < 49.5)
-                {
-                    continue;
-                }
+                //if(grades[i] < 49.5)
+                //{
+                //    continue;
+                //}
                 sum += grades[i];
                 res.Highest = Math.Max(res.Highest, grades[i]);
                 res.Lowest = Math.Min(res.Lowest, grades[i]);
@@ -78,34 +99,6 @@ namespace GradeBook
             return res;
         
         }
-        public void AddLetterGrade(char letter)
-        {
-            switch (letter)
-            {
-                case 'A':
-                    AddGrade(90.0);
-                    break;
-                case 'B':
-                    AddGrade(80.0);
-                    break;
-                case 'C':
-                    AddGrade(70.0);
-                    break;
-                default:
-                    AddGrade(0.0);
-                    break;
-
-            }
-
-        }
-
-        //public void ShowStats()
-        //{
-
-        //    Console.WriteLine($"The average grade is {average:N1}");
-        //    Console.WriteLine($"The highest grade is {highest}");
-        //    Console.WriteLine($"The lowest grade is {lowest}");
-        //}
 
     }
 }

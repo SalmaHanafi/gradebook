@@ -3,6 +3,7 @@ using Xunit;
 
 namespace GradeBook.Tests
 {
+    public delegate string WriteLogDelegate(string LogMessage);
     public class TypeTests
     {
         #region Reference Tests
@@ -113,9 +114,36 @@ namespace GradeBook.Tests
         {
             parameter.ToUpper();
         }
-        
 
-        
+
+
+        #endregion
+
+        #region Delegate Tests
+        int count = 0;
+        [Fact]
+        public void WriteLogDelegatePointsToMethodTest()
+        {
+            WriteLogDelegate log = getMessage;
+            log += getAnotherMessage;
+
+            var res = log("Log Message!");
+
+            Assert.Equal("log message!", res );
+            Assert.Equal(2, count);
+        }
+
+        //for testing  WriteLogDelegatePointsToMethodTest
+        string getMessage(string message)
+        {
+            count++;
+            return message.ToUpper();
+        }
+        string getAnotherMessage(string message2)
+        {
+            count++;
+            return message2.ToLower();
+        }
         #endregion
     }
 }
