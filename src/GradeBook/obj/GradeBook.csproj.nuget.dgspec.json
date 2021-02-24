@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Salma Hanafi\\source\\repos\\gradebook\\src\\GradeBook\\GradeBook.csproj": {}
+    "C:\\Users\\Salma Hanafi\\source\\repos\\Learning\\gradebook\\src\\GradeBook\\GradeBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Salma Hanafi\\source\\repos\\gradebook\\src\\GradeBook\\GradeBook.csproj": {
+    "C:\\Users\\Salma Hanafi\\source\\repos\\Learning\\gradebook\\src\\GradeBook\\GradeBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Salma Hanafi\\source\\repos\\gradebook\\src\\GradeBook\\GradeBook.csproj",
+        "projectUniqueName": "C:\\Users\\Salma Hanafi\\source\\repos\\Learning\\gradebook\\src\\GradeBook\\GradeBook.csproj",
         "projectName": "GradeBook",
-        "projectPath": "C:\\Users\\Salma Hanafi\\source\\repos\\gradebook\\src\\GradeBook\\GradeBook.csproj",
+        "projectPath": "C:\\Users\\Salma Hanafi\\source\\repos\\Learning\\gradebook\\src\\GradeBook\\GradeBook.csproj",
         "packagesPath": "C:\\Users\\Salma Hanafi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Salma Hanafi\\source\\repos\\gradebook\\src\\GradeBook\\obj\\",
+        "outputPath": "C:\\Users\\Salma Hanafi\\source\\repos\\Learning\\gradebook\\src\\GradeBook\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Salma Hanafi\\AppData\\Roaming\\NuGet\\NuGet.Config",

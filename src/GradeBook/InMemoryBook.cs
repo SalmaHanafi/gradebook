@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace GradeBook
 {
-    public class Book
+ 
+    public class InMemoryBook : GradeBook
     {
         //field definition
         List<double> grades;
-        //public string Name;
-        public string Name { get; set; }
 
-        public Book(string name)
+        public InMemoryBook(string name) : base(name)
         {
         grades = new List<double>();
         this.Name = name;
         }
       
-        public void AddGrade(double grade)
+        
+        public override void AddGrade(double grade)
         {
             if (grade >= 0 && grade <= 100) grades.Add(grade);
             else
@@ -57,7 +57,7 @@ namespace GradeBook
             return Name;
         }
         
-        public Statistics GetStats()
+        public override Statistics GetStats()
         {
             var res = new Statistics();
             res.Highest = double.MinValue;
